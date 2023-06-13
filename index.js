@@ -32,6 +32,8 @@ const kelasRouter = require("./routes/kelas");
 const landingRouter = require("./routes/landingpage");
 const detailpageRouter = require("./routes/detailpage");
 const paymentRouter = require("./routes/payment");
+const orderRouter = require("./routes/order");
+const orderdetailRouter = require("./routes/order_detail");
 
 const URL = `/api/v1`;
 
@@ -62,6 +64,8 @@ app.use("/kelas", kelasRouter);
 app.use(`${URL}/landingpage`, landingRouter);
 app.use(`${URL}/detailpage`, detailpageRouter);
 app.use(`${URL}`, paymentRouter);
+app.use("/order", orderRouter);
+app.use("/order_detail", orderdetailRouter);
 
 app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
   console.log("Server started on port 3000");
